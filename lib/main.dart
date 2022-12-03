@@ -13,5 +13,3 @@ class MyApp extends StatelessWidget {
     return MaterialApp(home: CustomKeyboard(),);
   }
 }
-
-//https://youtu.be/dfaFK561PAo?t=921
