@@ -106,8 +106,8 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
 
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.orange,
-                  backgroundColor: Colors.orange,
+                  //foregroundColor: Colors.orange,
+                  backgroundColor: Colors.blueAccent,
                 ),
                 onPressed: () {
                   print(amount);
@@ -119,7 +119,9 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
                   child: Text(
                     '확인',
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
