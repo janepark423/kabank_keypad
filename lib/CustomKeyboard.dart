@@ -109,7 +109,9 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
                   foregroundColor: Colors.orange,
                   backgroundColor: Colors.orange,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  print(amount);
+                },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                     vertical: 16.0,
