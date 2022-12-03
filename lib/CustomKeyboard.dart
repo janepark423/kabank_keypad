@@ -64,6 +64,11 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
 
   renderAmount() {
     String display = '보낼금액';
+    TextStyle style = TextStyle(
+        color: Colors.grey,
+        fontSize: 30.0,
+        fontWeight: FontWeight.bold);
+
     if(this.amount!.length > 0) {
       display = amount! + '원';
     }
@@ -71,10 +76,7 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
     return Center(
       child: Text(
         display,
-        style: TextStyle(
-          color: Colors.grey,
-          fontSize: 30.0,
-          fontWeight: FontWeight.bold,
+        style: style,
 
         ),
       ),
