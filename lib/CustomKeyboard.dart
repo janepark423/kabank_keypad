@@ -25,6 +25,10 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
   }
 
  onKeyTap(val){
+    // if(amount?.length ==0 && val == '00'){
+    //   return;
+    // }
+
     setState(() {
       amount = amount! + val;
     });
@@ -75,8 +79,8 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
         fontWeight: FontWeight.bold);
 
     if(this.amount!.length > 0) {
-      NumberFormat f = NumberFormat('#,###');
-      display = f.format(int.parse(amount??'에러발생')) + '원';
+      //NumberFormat f = NumberFormat('#,###');
+      display = amount! + '원';
       style = style.copyWith(color: Colors.black,);
     }
 
