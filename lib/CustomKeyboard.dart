@@ -7,16 +7,21 @@ class CustomKeyboard extends StatefulWidget {
 }
 
 class _CustomKeyboardState extends State<CustomKeyboard> {
-  final keys = [
-    ['1', '2', '3'],
-    ['4', '5', '6'],
-    ['7', '8', '9'],
-    [
-      '00',
-      '0',
-      Icon(Icons.keyboard_backspace),
-    ],
-  ];
+  late List<List<dynamic>> keys;
+  String? amount;
+
+  @override
+  void initState() {
+    super.initState();
+
+    keys = [
+      ['1', '2', '3'],
+      ['4', '5', '6'],
+      ['7', '8', '9'],
+      ['00', '0', Icon(Icons.keyboard_backspace)]
+    ];
+    amount = '';
+  }
 
   renderKeyboard() {
     return keys
