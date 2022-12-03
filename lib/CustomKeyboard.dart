@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:mykeypad_flutter/KeyboardKey.dart';
 
 class CustomKeyboard extends StatefulWidget {
@@ -70,7 +71,9 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
         fontWeight: FontWeight.bold);
 
     if(this.amount!.length > 0) {
-      display = amount! + '원';
+      NumberFormat f = NumberFormat('#,###');
+      display = f.format(int.parse(amount??'에러발생')) + '원';
+      style = style.copyWith(color: Colors.black,);
     }
 
     return Center(
