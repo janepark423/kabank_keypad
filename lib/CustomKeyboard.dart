@@ -23,6 +23,19 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
     amount = '';
   }
 
+ onKeyTap(val){
+    setState(() {
+      amount = amount! + val;
+    });
+ }
+
+  onBackspacePress(val){
+    setState(() {
+      amount = amount?.substring(0, amount!.length - 1);
+    });
+  }
+
+
   renderKeyboard() {
     return keys
         .map(
@@ -33,7 +46,13 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
                   child: KeyboardKey(
                     label: y,
                     value: y,
-                    onTap: (val) {},
+                    onTap: (val) {
+                      if(val is Widget){
+                        onBackspacePress(val);
+                      }else{
+                        onKeyTap(val);
+                      }
+                    },
                   ),
                 );
               },
@@ -44,10 +63,15 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
   }
 
   renderAmount() {
-    return Text(
-      '보낼금액',
-      style: TextStyle(
-        color: Colors.black,
+    return Center(
+      child: Text(
+        '보낼금액',
+        style: TextStyle(
+          color: Colors.grey,
+          fontSize: 30.0,
+          fontWeight: FontWeight.bold,
+
+        ),
       ),
     );
   }
