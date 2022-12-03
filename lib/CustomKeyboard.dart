@@ -31,6 +31,10 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
  }
 
   onBackspacePress(val){
+    if(amount?.length == 0){
+      return;
+    }
+
     setState(() {
       amount = amount?.substring(0, amount!.length - 1);
     });
