@@ -77,8 +77,6 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
       child: Text(
         display,
         style: style,
-
-        ),
       ),
     );
   }
